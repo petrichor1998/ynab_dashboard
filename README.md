@@ -5,7 +5,20 @@ This project adds a planning layer on top of YNAB so you can answer questions li
 - Am I still on track to hit my dated goals?
 - How much monthly room do I really have after essentials, flexible spending, and wealth-building are considered?
 - If I make a large purchase, which goals slip first?
-- If my plan is short, how much should I cut from flexible or wealth categories?
+- If my plan is short, how much should I cut from flexible or wealth categories?`r`n`r`n## Open Source And Collaboration
+
+This repo is public and open to collaboration.
+
+- License: `MIT`
+- Safe setup: each user should create their own local `.env`
+- Required secrets stay local: `YNAB_ACCESS_TOKEN` and `YNAB_PLAN_ID`
+
+If you want to contribute:
+
+1. Fork the repo or open an issue first for larger changes.
+2. Keep any real YNAB tokens, plan IDs, or exported budget payloads out of commits.
+3. Use `.env.example` as the template for local setup.
+4. Prefer changes that keep the forecasting assumptions transparent and explainable.
 
 ## Product Goal
 
@@ -353,4 +366,8 @@ Possible next steps:
 - saved planning presets
 - charts for income, targets, and spending trends
 \n\n## Exact Due Date And Income Timing\n\nThe dashboard now uses the exact goal due date together with a user-provided monthly income timing choice.\n\nFormula:\n\n- choose an income timing: `first`, `last`, or `custom day`\n- find the next income arrival date after today\n- count how many income arrivals occur on or before the goal due date\n- use that count as the default planning window for the goal\n\nSo if today is March 30, income timing is `last day of each month`, and a goal is due May 31, the default planning window is based on the April 30 and May 31 pay cycles.\n\nIf the sandbox `Income arrivals to achieve` value is changed manually for a goal, that override replaces the automatically counted income arrivals.\n
+
+
+
+
 
