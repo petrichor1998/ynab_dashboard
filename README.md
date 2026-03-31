@@ -5,7 +5,23 @@ This project adds a planning layer on top of YNAB so you can answer questions li
 - Am I still on track to hit my dated goals?
 - How much monthly room do I really have after essentials, flexible spending, and wealth-building are considered?
 - If I make a large purchase, which goals slip first?
-- If my plan is short, how much should I cut from flexible or wealth categories?`r`n`r`n## Open Source And Collaboration
+- If my plan is short, how much should I cut from flexible or wealth categories?
+
+## Screenshots
+
+Screenshots below show the main planning dashboard and the per-category trends view.
+
+![Goal dashboard](docs/dashboard-overview.png)
+
+![Category trends](docs/category-trends.png)
+
+## Key Views
+
+- `Goal dashboard`: full-plan goal pacing, purchase stress testing, bucket assignment, and cut suggestions
+- `Category trends`: per-category planning target, recent spending trend, latest month, average spend, and target gap
+
+
+## Open Source And Collaboration
 
 This repo is public and open to collaboration.
 
@@ -19,6 +35,7 @@ If you want to contribute:
 2. Keep any real YNAB tokens, plan IDs, or exported budget payloads out of commits.
 3. Use `.env.example` as the template for local setup.
 4. Prefer changes that keep the forecasting assumptions transparent and explainable.
+
 
 ## Product Goal
 
@@ -365,9 +382,19 @@ Possible next steps:
 - better treatment of irregular true-expense categories
 - saved planning presets
 - charts for income, targets, and spending trends
-\n\n## Exact Due Date And Income Timing\n\nThe dashboard now uses the exact goal due date together with a user-provided monthly income timing choice.\n\nFormula:\n\n- choose an income timing: `first`, `last`, or `custom day`\n- find the next income arrival date after today\n- count how many income arrivals occur on or before the goal due date\n- use that count as the default planning window for the goal\n\nSo if today is March 30, income timing is `last day of each month`, and a goal is due May 31, the default planning window is based on the April 30 and May 31 pay cycles.\n\nIf the sandbox `Income arrivals to achieve` value is changed manually for a goal, that override replaces the automatically counted income arrivals.\n
 
 
+## Exact Due Date And Income Timing
 
+The dashboard now uses the exact goal due date together with a user-provided monthly income timing choice.
 
+Formula:
 
+- choose an income timing: `first`, `last`, or `custom day`
+- find the next income arrival date after today
+- count how many income arrivals occur on or before the goal due date
+- use that count as the default planning window for the goal
+
+So if today is March 30, income timing is `last day of each month`, and a goal is due May 31, the default planning window is based on the April 30 and May 31 pay cycles.
+
+If the sandbox `Income arrivals to achieve` value is changed manually for a goal, that override replaces the automatically counted income arrivals.
